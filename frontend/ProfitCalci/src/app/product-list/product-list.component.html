@@ -1,0 +1,41 @@
+<div class="container" style="max-width: 600px; margin: auto;">
+  <h2>🚚 Profit Calculator</h2>
+
+  <form (ngSubmit)="calculate()">
+    <div>
+      <label>Distance (km):</label>
+      <input type="number" [(ngModel)]="distance" name="distance" required />
+    </div>
+
+    <div>
+      <label>Weight (kg):</label>
+      <input type="number" [(ngModel)]="weight" name="weight" required />
+    </div>
+
+    <div>
+      <label>Priority:</label>
+      <select [(ngModel)]="priority" name="priority">
+        <option value="standard">Standard</option>
+        <option value="express">Express</option>
+      </select>
+    </div>
+
+    <button type="submit">Calculate Profit</button>
+  </form>
+
+  <div *ngIf="error" style="color: red; margin-top: 1rem;">
+    ❌ {{ error }}
+  </div>
+
+  <div *ngIf="result" style="margin-top: 1rem;">
+    <h4>✅ Result:</h4>
+    <ul>
+      <li><b>Fuel Cost:</b> ₹{{ result.fuelCost }}</li>
+      <li><b>Labor Cost:</b> ₹{{ result.laborCost }}</li>
+      <li><b>Toll Cost:</b> ₹{{ result.tollCost }}</li>
+      <li><b>Total Cost:</b> ₹{{ result.totalCost }}</li>
+      <li><b>Recommended Price:</b> ₹{{ result.recommendedPrice }}</li>
+      <li><b>Net Profit:</b> ₹{{ result.netProfit }}</li>
+    </ul>
+  </div>
+</div>
