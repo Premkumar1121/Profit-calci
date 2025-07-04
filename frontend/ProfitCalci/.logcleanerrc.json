@@ -1,9 +1,0 @@
-{
-  "path": "./src",
-  "mode": "comment",
-  "ext": [".js", ".ts"],
-  "dryRun": true,
-  "report": true,
-  "backup": true,
-  "ignore": ["node_modules","dist"]
-}
